@@ -1,0 +1,46 @@
+# macOS
+.DS_Store
+
+# Environments
+myvenv/
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Data
+datasets/
+
+# LaTeX
+*.tex
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Logs and outputs
+logs/
+results/
+
+# Generated files
+*.csv
+*.png
+*.pkl
+*.pt
+*.pth
+*.npy
+*.npz
+*.joblib
+*.graphml
+
+# Secrets/local config
+.env
+*.key
+*.pem
