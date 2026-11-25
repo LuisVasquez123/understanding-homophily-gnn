@@ -206,10 +206,6 @@ def run_experiment(load_existing=True):
     metrics = ["h_unb"] 
     gain_vs_homophily_plot_path = experiment_dir / "gain_vs_homophily.png"
     plot_gain_vs_homophily(df=df, label_rates=LABEL_RATES, metrics=metrics, gain=gain, output_path=gain_vs_homophily_plot_path)
-    
-    for g in ["ratio_mean", "abs_gain_mean", "rel_gain_mean", "mlp_test_acc_mean", "gcn_test_acc_mean"]:
-        gain_vs_label_rate_plot_path = experiment_dir / f"gain_vs_label_rate_{g}.png"
-        plot_gain_vs_label_rate(df=df, metric="h_unb", gain=g, output_path=gain_vs_label_rate_plot_path)
 
     for dataset_name, df_dataset in df.groupby("dataset"):
         output_path = gains_dir / f"gains_{dataset_name.lower()}.png"

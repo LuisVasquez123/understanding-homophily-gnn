@@ -125,16 +125,6 @@ def run_experiment(load_existing=True):
         df_corr.to_csv(output_path, index=False)
         print(f"df_corr:\n{df_corr}")
 
-    # Heatmap
-    for name in ["pearson", "spearman"]:
-        file_name = f"{name}_heatmap.png"
-        plot_correlation_heatmap(
-            df_corr=df_corr,
-            metrics=metrics_names,
-            method=name,
-            output_path= experiment_dir / file_name
-        )
-
     # Pairgrid
     for name in ["pearson", "spearman"]:
         file_name = f"{name}_pairgrid.png"

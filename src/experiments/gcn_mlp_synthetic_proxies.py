@@ -341,7 +341,6 @@ def run_experiment(load_existing=True):
     output_path = experiment_dir / "nrmse.csv"
     df_nrmse.to_csv(output_path, index=False)
     output_path = experiment_dir / "nrmse.png"
-    plot_nrmse_syn(df_nrmse, output_path)
 
     # Plots
     y_var = "abs_gain"

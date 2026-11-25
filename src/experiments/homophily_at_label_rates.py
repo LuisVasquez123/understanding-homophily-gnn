@@ -390,7 +390,6 @@ def run_experiment(load_existing=True):
     output_path = experiment_dir / "nrmse.csv"
     df_nrmse_mean_wide.to_csv(output_path, index=False)
     output_path = experiment_dir / "nrmse_at_label_rates.png"
-    plot_label_rate_rmse(df_nrmse_mean, output_path)
 
     # nDCG
     df_ndcg = ndcg(df, HOMOPHILY_METRICS)
@@ -402,7 +401,6 @@ def run_experiment(load_existing=True):
     output_path = experiment_dir / "mr.csv"
     df_mr.to_csv(output_path, index=False)
     
-
 
     # Plots
     # Degradation at all label rates
