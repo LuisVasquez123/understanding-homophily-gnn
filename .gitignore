@@ -44,3 +44,9 @@ results/
 .env
 *.key
 *.pem
+
+# README figs
+!figures/measurable_homophily_scatterplot_hetero.png
+!figures/measurable_homophily_scatterplot_homo.png
+!figures/pipeline_emp.png
+!figures/pipeline_syn.png

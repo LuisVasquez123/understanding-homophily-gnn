@@ -1,0 +1,12 @@
+models:
+  hidden_channels: 16
+  num_layers: 2 
+  dropout: 0.5 
+
+training:
+  epochs: 200 
+  optimizer: Adam 
+  learning_rate: 0.01 
+  weight_decay: 0.0005
+  early_stopping: True
+  patience: 50

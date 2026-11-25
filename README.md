@@ -1,20 +1,21 @@
 # Understanding Graph Neural Network Performance in Semi-Supervised Node Classification under Label Scarcity Conditions
 
+![The synthetic pipeline uses CSBM-H graphs as inputs and evaluates homophily on a predefined supervision regime.](figures/measurable_homophily_scatterplot_homo.png)
 *Master's Thesis, M.Sc. Software Engineering and Management. Technische Universität Graz, 2026.*
 
-**Supervisor**: Denis Helic, Assoc.Prof. Dipl.-Ing. Dr.techn. (Institute of Human-Centered Computing, TU Graz)
-  
-**Second Supervisor**: Hussain Hussain (Know Center Research GmbH, Graz) 
+**Supervisors**: 
+- Denis Helic, Assoc.Prof. Dipl.-Ing. Dr.techn. (Institute of Human-Centered Computing, TU Graz)
+- Hussain Hussain, Dipl.-Ing. Dr.techn. (Know Center Research GmbH, Graz) 
 
 ## Abstract
 
 Graph Neural Networks (GNNs) are known to outperform graph-agnostic models in semi-supervised node classification under certain conditions. This advantage is commonly associated with the homophily phenomenon, the tendency of nodes from the same class to connect to each other. The goal of this work is to study the mechanisms that determine GNN performance and to investigate whether their advantage over graph-agnostic models can be reliably predicted under label scarcity conditions. For this, we use the Graph Convolutional Network (GCN) and the Multi-Layer Perceptron (MLP) as the canonical graph-aware and graph-agnostic architectures, respectively. We compare the accuracy of the models in synthetic as well as empirical networks, relate this performance with homophily, and experimentally test to which extent homophily estimators computed using a subset of labeled nodes in the graph are able to predict the advantage of graph-aware models before model training. We show how synthetic graphs reveal the main structural mechanism that drives GNN performance, i.e. class-level node distinguishability, the advantage of GNNs can therefore be faithfully predicted in this setting, yet the structurally heterogeneous nature of empirical datasets make the estimation, especially under label scarcity, more challenging. We provide guidelines on which label-, feature- and topology-based metrics best serve as proxies to estimate the potential advantage of graph-aware models, both in synthetic and empirical networks, and show how these can be used in label-scarce settings. Finally, we derive that model selection under label scarcity should leverage graph properties beyond label homophily, especially in empirical datasets, where model performance is driven by multiple factors. Overall, the work offers comprehensive guidelines for understanding and predicting GNN advantage under limited supervision.
 
 ## Synthetic Pipeline overview
-
+![Label-based estimators on the homophilic regime ($h\geq0.5$).](figures/pipeline_syn.png)
 
 ## Empirical Pipeline overview
-
+![The Empirical pipeline uses real-world graphs as inputs and evaluates homophily on different label rates per dataset.](figures/pipeline_emp.png)
 
 ## Project Structure
 
@@ -24,49 +25,52 @@ understanding-homophily-gnn/
 ├── README.md
 ├── configs
 │   └── base_config.yaml
+├── examination_pdf.pdf
 ├── figures
 ├── requirements.txt
-└── src
-    ├── constants.py
-    ├── evaluation
-    │   └── two_factor_rm_anova.R
-    ├── experiments
-    │   ├── __init__.py
-    │   ├── eda.py
-    │   ├── gain_vs_homophily.py
-    │   ├── gcn_mlp_synthetic.py
-    │   ├── gcn_mlp_synthetic_proxies.py
-    │   ├── homophily_at_label_rates.py
-    │   ├── homophily_measures.py
-    │   └── homophily_proxies.py
-    ├── homophily
-    │   ├── __init__.py
-    │   ├── measures.py
-    │   ├── preprocessing.py
-    │   └── rmi.py
-    ├── main.py                        # Main entry point to run experiments
-    ├── models
-    │   ├── __init__.py
-    │   ├── gcn.py
-    │   └── mlp.py
-    ├── training
-    │   ├── __init__.py
-    │   └── train.py
-    ├── utils
-    │   ├── __init__.py
-    │   ├── configs.py
-    │   ├── datasets.py
-    │   ├── graph_utilities.py
-    │   ├── paths.py
-    │   ├── seeds.py
-    │   ├── splits.py
-    │   └── synthetic_data.py
-    └── visualization
-        ├── __init__.py
-        ├── datasets.py
-        ├── embeddings.py
-        ├── homophily.py
-        └── training.py
+├── src
+│   ├── constants.py
+│   ├── evaluation
+│   │   └── two_factor_rm_anova.R
+│   ├── experiments
+│   │   ├── __init__.py
+│   │   ├── eda.py
+│   │   ├── gain_vs_homophily.py
+│   │   ├── gcn_mlp_synthetic.py
+│   │   ├── gcn_mlp_synthetic_proxies.py
+│   │   ├── homophily_at_label_rates.py
+│   │   ├── homophily_measures.py
+│   │   └── homophily_proxies.py
+│   ├── homophily
+│   │   ├── __init__.py
+│   │   ├── measures.py
+│   │   ├── preprocessing.py
+│   │   └── rmi.py
+│   ├── main.py
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── gcn.py
+│   │   └── mlp.py
+│   ├── training
+│   │   ├── __init__.py
+│   │   └── train.py
+│   ├── utils
+│   │   ├── __init__.py
+│   │   ├── configs.py
+│   │   ├── datasets.py
+│   │   ├── graph_utilities.py
+│   │   ├── paths.py
+│   │   ├── seeds.py
+│   │   ├── splits.py
+│   │   └── synthetic_data.py
+│   └── visualization
+│       ├── __init__.py
+│       ├── datasets.py
+│       ├── embeddings.py
+│       ├── homophily.py
+│       └── training.py
+├── examination.pdf
+└── thesis.pdf
 ```
 
 ## Getting started
@@ -95,10 +99,17 @@ python3 -m src.experiments.eda
 ```
 
 
-To run all 
+To run all experiments:
 ```bash
 python3 -m src.main all --load-existing
 ```
+
+
+To run one experiment:
+```bash
+python3 -m src.main eda --load-existing
+```
+
 
 ## Citation
 ```bibtex
