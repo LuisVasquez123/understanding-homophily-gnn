@@ -106,7 +106,7 @@ python3 -m src.main all --load-existing
 
 To run one experiment:
 ```bash
-python3 -m src.main eda --load-existing
+python3 -m src.main gcn_mlp_synthetic
 ```
 
 
