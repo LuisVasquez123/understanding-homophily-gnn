@@ -25,7 +25,6 @@ understanding-homophily-gnn/
 ├── README.md
 ├── configs
 │   └── base_config.yaml
-├── examination_pdf.pdf
 ├── figures
 ├── requirements.txt
 ├── src
