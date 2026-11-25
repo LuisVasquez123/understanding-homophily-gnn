@@ -15,7 +15,6 @@ from src.utils.datasets import (
 )
 from src.visualization import (
     plot_gain_vs_homophily,
-    plot_correlation_heatmap,
     plot_correlation_pairgrid
 )
 from src.utils.paths import DATASETS_DIR, RESULTS_DIR, CONFIGS_DIR

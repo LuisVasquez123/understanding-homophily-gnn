@@ -3,7 +3,6 @@ from src.constants import ALL_DATASETS, DATASETS_3, DATASETS_SMALL, ALL_PROXIES,
 from src.utils import import_dataset, to_unidirectional
 from src.visualization import (
     plot_labels_bubbleplot,
-    plot_proxies_vs_homophily,
     plot_gain_vs_homophily
     )
 from src.homophily import (
@@ -11,12 +10,8 @@ from src.homophily import (
     feature_assortativity_per_dimension,
     feature_assortativity_flattened,
     local_similarity,
-    attribute_homophily,
-
     degree_assortativity,
     lcc_assortativity,
-    label_informativeness,
-    two_hop_neighbor_class_similarity,
     neighborhood_similarity,
 )
 from torch_geometric.utils import is_undirected, degree, to_networkx

@@ -6,9 +6,7 @@ from src.utils import load_config
 from src.training import train_model
 from src.visualization import (
     plot_gain_vs_homophily, 
-    plot_gain_vs_label_rate, 
     plot_accuracy_boxplots,
-    plot_gain_homophily_correlation,
     plot_gains
 )
 from pathlib import Path

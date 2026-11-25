@@ -16,7 +16,7 @@ from src.utils import (
 )
 
 from scipy.stats import pearsonr, spearmanr
-from src.visualization import plot_homophily_at_label_rates, plot_label_rate_rmse, plot_gain_vs_estimators, plot_correlation_heatmap
+from src.visualization import plot_homophily_at_label_rates, plot_gain_vs_estimators
 from src.utils import DATASETS_DIR, RESULTS_DIR, CONFIGS_DIR
 from src.constants import (
     ALL_DATASETS, 

@@ -16,7 +16,6 @@ from src.utils import (
     CSBM_H_MULTI, 
     load_config, 
     generate_splits_synthetic,
-    two_factor_anova,
     generate_pyg_subgraph,
     generate_orthogonal_mean_vectors
     )

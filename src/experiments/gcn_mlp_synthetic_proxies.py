@@ -10,17 +10,12 @@ from src.homophily import (
     unbiased_homophily,    
     node_homophily_h2,
     rmi,
-
     generalized_edge_homophily,
     feature_assortativity_per_dimension,
     feature_assortativity_flattened,
     local_similarity,
-    attribute_homophily,
-
     degree_assortativity,
     lcc_assortativity,
-    label_informativeness,
-    two_hop_neighbor_class_similarity,
     neighborhood_similarity,
 )
 from src.utils import (
@@ -34,7 +29,6 @@ from src.utils import (
 from src.visualization import (
     plot_csbm_h,
     plot_measurable_homophily_scatterplots,
-    plot_nrmse_syn,
     plot_homophily_estimator_diff_hist,
     plot_proxies_scatterplots
     )
